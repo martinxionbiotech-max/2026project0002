@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>静态网站模板</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="#">BrandName</a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#features">功能</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#contact">联系</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <p class="tag">免费可复用模板</p>
+          <h1>快速搭建你的静态网站</h1>
+          <p class="subtitle">
+            这个模板包含头部导航、主视觉区、功能卡片、关于介绍和页脚，适合展示型官网起步。
+          </p>
+          <a class="btn" href="#features">开始浏览</a>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2>核心功能区</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>响应式布局</h3>
+              <p>适配桌面与移动端，默认使用弹性网格布局。</p>
+            </article>
+            <article class="card">
+              <h3>易于修改</h3>
+              <p>结构清晰，样式分离，方便快速替换文案与品牌色。</p>
+            </article>
+            <article class="card">
+              <h3>轻量高效</h3>
+              <p>无框架依赖，适合纯静态页面或作为后续项目骨架。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section alt">
+        <div class="container two-col">
+          <div>
+            <h2>关于模板</h2>
+            <p>
+              你可以将本模板用于企业官网、个人主页、产品介绍页等场景。配色、字体、区块都可按需替换。
+            </p>
+          </div>
+          <aside class="notice">
+            <p>提示：修改 <code>styles.css</code> 中的 <code>--primary</code> 可快速换主题色。</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 BrandName. All rights reserved.</p>
+        <button id="toTop" class="to-top" type="button">返回顶部</button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
