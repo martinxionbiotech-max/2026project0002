@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Wrap Calculator | Area, Roll Length, and Cost Estimator</title>
+    <meta
+      name="description"
+      content="Car Wrap Calculator for color change wraps, advertising wraps, and PPF. Estimate wrap area, film roll length, number of rolls, and material cost in seconds."
+    />
+    <meta
+      name="keywords"
+      content="Car Wrap Calculator, vehicle wrap calculator, vinyl wrap cost estimator, PPF calculator, wrap area calculator"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Car Wrap Calculator | Area and Cost Estimator" />
+    <meta
+      property="og:description"
+      content="Estimate wrap material area, roll length, roll count, and budget for cars, SUVs, vans, and pickups."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://example.com/car-wrap-calculator" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Car Wrap Calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "en",
+        "description": "A vehicle wrap calculator to estimate required wrap area, film length, rolls, and material costs for color-change wraps, ad wraps, and PPF installations."
+      }
+    </script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">Car Wrap Calculator</p>
+        <h1>Estimate Wrap Area, Roll Length, and Material Cost</h1>
+        <p>
+          Built for wrap shops, advertising teams, PPF installers, and car owners. Get quick planning numbers for
+          materials, budget, and installation complexity.
+        </p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="card" aria-labelledby="calculator-title">
+        <h2 id="calculator-title">Calculator</h2>
+        <form id="wrap-form">
+          <div class="grid">
+            <label>
+              Vehicle Type
+              <select id="vehicleType" required>
+                <option value="sedan">Compact / Sedan</option>
+                <option value="suv">SUV / Crossover</option>
+                <option value="mpv">MPV / Van</option>
+                <option value="truck">Light Truck / Pickup</option>
+              </select>
+            </label>
+
+            <label>
+              Wrap Scenario
+              <select id="filmScenario" required>
+                <option value="color">Color Change Wrap</option>
+                <option value="ad">Advertising Wrap</option>
+                <option value="ppf">PPF (Paint Protection Film)</option>
+              </select>
+            </label>
+
+            <label>
+              Coverage Area
+              <select id="coverage" required>
+                <option value="full">Full Vehicle</option>
+                <option value="roof">Roof Only</option>
+                <option value="hood">Hood Only</option>
+                <option value="doors">4 Doors Only</option>
+                <option value="custom">Custom Ratio</option>
+              </select>
+            </label>
+
+            <label>
+              Custom Coverage Ratio (0.1 - 1.0)
+              <input id="customRatio" type="number" min="0.1" max="1" step="0.05" value="0.5" />
+            </label>
+
+            <label>
+              Roll Width (meters)
+              <select id="rollWidth" required>
+                <option value="1.52">1.52 m (common)</option>
+                <option value="1.5">1.50 m</option>
+                <option value="1.22">1.22 m</option>
+              </select>
+            </label>
+
+            <label>
+              Waste / Overlap Factor (%)
+              <input id="waste" type="number" min="0" max="40" value="12" required />
+            </label>
+
+            <label>
+              Material Unit Price (USD / m²)
+              <input id="price" type="number" min="1" value="25" required />
+            </label>
+
+            <label>
+              Roll Length (meters)
+              <input id="rollLength" type="number" min="1" value="18" required />
+            </label>
+          </div>
+
+          <button type="submit">Calculate Now</button>
+        </form>
+
+        <div class="result" id="result" aria-live="polite"></div>
+      </section>
+
+      <aside class="card" aria-labelledby="usage-title">
+        <h2 id="usage-title">How to Use</h2>
+        <ol>
+          <li>Select the vehicle type and wrap scenario.</li>
+          <li>Choose full or partial coverage (roof, hood, doors, or custom).</li>
+          <li>Input roll width, waste factor, unit price, and roll length.</li>
+          <li>Click <strong>Calculate Now</strong> to get area, rolls, and cost estimates.</li>
+        </ol>
+        <p class="tip">Tip: Add 5% extra safety stock when ordering film to avoid color-lot mismatch delays.</p>
+      </aside>
+    </main>
+
+    <section class="container content-section" aria-labelledby="method-title">
+      <h2 id="method-title">Calculation Method</h2>
+      <p>
+        The tool uses average exterior area by vehicle class, applies your selected coverage ratio and waste factor,
+        then converts total area into required roll length and material budget.
+      </p>
+      <ul>
+        <li>Effective area = Base area × Coverage ratio × Scenario factor × (1 + Waste factor)</li>
+        <li>Required roll length = Effective area ÷ Roll width</li>
+        <li>Roll count = Round up (Required roll length ÷ Roll length per roll)</li>
+        <li>Material cost = Effective area × Unit price</li>
+      </ul>
+    </section>
+
+    <section class="container content-section" aria-labelledby="cases-title">
+      <h2 id="cases-title">Application Scenarios</h2>
+      <ul>
+        <li><strong>Wrap shops:</strong> produce quick and consistent customer quotations.</li>
+        <li><strong>Ad teams:</strong> estimate material demand for fleet branding projects.</li>
+        <li><strong>PPF installers:</strong> pre-plan stock and labor scheduling.</li>
+        <li><strong>Car owners:</strong> compare budget options before placing orders.</li>
+      </ul>
+    </section>
+
+    <section class="container content-section" aria-labelledby="limits-title">
+      <h2 id="limits-title">Limitations</h2>
+      <ul>
+        <li>Results are estimation values, not laser-accurate panel templates.</li>
+        <li>Body kits, spoilers, and custom aero parts increase actual consumption.</li>
+        <li>Film stretch characteristics vary by brand and product line.</li>
+        <li>Installer experience and process quality strongly affect waste rates.</li>
+      </ul>
+    </section>
+
+    <footer class="container footer">
+      <p>
+        SEO topics: car wrap calculator, vinyl wrap estimator, PPF material calculator, vehicle wrap cost estimate.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
